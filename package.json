@@ -1,0 +1,15 @@
+{
+  "name": "tiktok-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "onrequest.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/css/main.css -o ./public/css/main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}

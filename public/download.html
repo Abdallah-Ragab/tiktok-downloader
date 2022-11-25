@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <link rel="stylesheet" href="./css/main.css">
+    <script defer src="./js/download.js"></script>
+    <title>TikLoad - Download Tiktoks For Free No Watermark</title>
+</head>
+
+<body class="bg-gray-100 dark:bg-neutral-900 w-screen h-screen">
+    <div id="container" class="hidden container mx-auto h-full flex flex-col space-y-9">
+        <nav class="h-24 flex justify-between px-2">
+            <a class="h-full p-1.5 flex items-center">
+                <div class="w-10 h-10" href="#">
+                    <img class="w-full h-full" src="./assets/logo.png"></img>
+                </div>
+                <div class="hidden sm:block ml-2 font-bold text-3xl dark:text-neutral-200">TikLoad</div>
+            </a>
+            <ul class="flex space-x-4 md:space-x-6 px-2">
+                <li
+                    class="w-full h-full flex justify-center items-center whitespace-nowrap cursor-pointer text-gray-500 dark:text-neutral-400 transition-colors hover:text-gray-800 dark:hover:text-neutral-200 font-semibold text-md md:text-lg">
+                    <a class="clear-css" href="./index.html">Home</a></li>
+                <li
+                    class="w-full h-full flex justify-center items-center whitespace-nowrap cursor-pointer text-gray-500 dark:text-neutral-400 transition-colors hover:text-gray-800 dark:hover:text-neutral-200 font-semibold text-md md:text-lg">
+                    <a class="clear-css" href="./download.html">More Services</a></li>
+                <li
+                    class="w-full h-full flex justify-center items-center whitespace-nowrap cursor-pointer text-gray-500 dark:text-neutral-400 transition-colors hover:text-gray-800 dark:hover:text-neutral-200 font-semibold text-md md:text-lg">
+                    <a class="clear-css" href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mt-8 h-full px-2 flex flex-col space-y-6 pb-6 md:flex-row md:justify-center md:space-x-12">
+
+            <!-- VIDEO -->
+            <div id="video_container" class="w-full md:w-1/2 h-1/2 md:h-3/4 rounded-lg bg-neutral-600">
+                <video controls class="rounded-lg h-full w-full" poster=""
+                    style="background-image:url(../../public/assets/pattern.png);">
+                    <source id="video_source" src="">
+                </video>
+            </div>
+            <div class="md:flex md:flex-col md:space-y-8">
+                <!-- CARD -->
+                <div
+                    class="dark:bg-neutral-600 bg-sky-700 md:bg-transparent dark:md:bg-transparent w-full rounded-lg flex flex-col px-2 pb-4 pt-2 space-y-3">
+                    <!-- USER -->
+                    <div
+                        class="w-full h-16 flex justify-between items-center space-x-2 px-2 dark:bg-neutral-400 dark:md:bg-sky-100 bg-sky-700 rounded-lg">
+                        <div>
+                            <img id="author_avatar" class="w-10 h-10 rounded-lg" src="">
+                        </div>
+                        <div class="flex flex-col justify-start items-start flex-grow">
+                            <div id="author_name" class="font-bold -mt-1 dark:text-black text-white"></div>
+                            <div id="author_username" class="-mt-1 dark:text-black text-white"></div>
+                        </div>
+                        <a id="author_videos" class="clear_css" target="_blank" href="">
+                            <div
+                                class="h-10 flex justify-center items-center p-2 rounded-lg dark:bg-neutral-600 bg-sky-100 hover:bg-white dark:hover:bg-neutral-700 transition-colors dark:text-white">
+                                More Videos
+                                <svg class="ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="stroke-sky-500"
+                                        d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="flex items-center space-x-3 md:flex-col md:space-x-0 md:space-y-3 w-full">
+                        <div onclick="handleDownloadButtonClick(this)" key="video" id="video_download"
+                            class="relative w-full flex flex-col justify-center items-center py-1 rounded-lg bg-sky-300 hover:bg-sky-200 transition-colors cursor-pointer">
+                            <div class="button-content flex flex-col justify-center items-center py-1">
+                                <span class="font-semibold text-lg text-neutral-800">Download</span>
+                                <span class="text-xs whitespace-nowrap text-neutral-600 -mt-1">Without Watermark</span>
+                            </div>
+                            <svg class="dots hidden absolute left-0 right-0 mx-auto h-3/4" id="loader"
+                                viewBox="0 0 132 58" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                <g class="fill-neutral-800" id="Page-1" stroke="none" stroke-width="1"
+                                    fill-rule="evenodd" sketch:type="MSPage">
+                                    <g sketch:type="MSArtboardGroup">
+                                        <circle id="dot1" sketch:type="MSShapeGroup" cx="25" cy="30" r="13"></circle>
+                                        <circle id="dot2" sketch:type="MSShapeGroup" cx="65" cy="30" r="13"></circle>
+                                        <circle id="dot3" sketch:type="MSShapeGroup" cx="105" cy="30" r="13"></circle>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div onclick="handleDownloadButtonClick(this)" key="video_wm" id="video_download_wm"
+                            class="relative w-full flex flex-col justify-center items-center py-1 rounded-lg bg-sky-300 hover:bg-sky-200 transition-colors cursor-pointer">
+                            <div class="button-content flex flex-col justify-center items-center py-1">
+                                <span class="font-semibold text-lg text-neutral-800">Download</span>
+                                <span class="text-xs whitespace-nowrap text-neutral-600 -mt-1">With Watermark</span>
+                            </div>
+                            <svg class="dots hidden absolute left-0 right-0 mx-auto h-3/4" id="loader"
+                                viewBox="0 0 132 58" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                                <g class="fill-neutral-800" id="Page-1" stroke="none" stroke-width="1"
+                                    fill-rule="evenodd" sketch:type="MSPage">
+                                    <g sketch:type="MSArtboardGroup">
+                                        <circle id="dot1" sketch:type="MSShapeGroup" cx="25" cy="30" r="13"></circle>
+                                        <circle id="dot2" sketch:type="MSShapeGroup" cx="65" cy="30" r="13"></circle>
+                                        <circle id="dot3" sketch:type="MSShapeGroup" cx="105" cy="30" r="13"></circle>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- MUSIC -->
+                    <div
+                        class="dark:bg-sky-100 bg-sky-900 w-full h-16 rounded-lg flex p-2 justify-between items-center space-x-2">
+                        <div>
+                            <img id="music_cover" class="w-10 h-10 rounded-lg" src="">
+                        </div>
+                        <div class="flec flex-col justify-start items-start flex-grow overflow-hidden">
+                            <div id="music_title" class="font-bold -mt-1 dark:text-black text-white whitespace-nowrap">
+                            </div>
+                            <div id="music_author" class="-mt-1 dark:text-black text-white whitespace-nowrap">
+                            </div>
+                        </div>
+                        <div onclick="handleDownloadButtonClick(this)" key="music" id="music_download"
+                            class="relative w-10 h-10 flex justify-center items-center p-2 rounded-lg dark:bg-sky-400 dark:hover:bg-sky-300 bg-sky-100 hover:bg-white">
+                            <svg class="button-content" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 277.425 277.425"
+                                style="enable-background:new 0 0 277.425 277.425;" xml:space="preserve">
+                                <path class="fill-sky-800" style="fill-rule:evenodd;clip-rule:evenodd;"
+                                    d="M266.142,136.6c-8.759-38.884-44.033-105.278-123.225-105.278c-0.695,0-1.361,0.112-2.028,0.217c-0.666-0.104-1.33-0.216-2.023-0.216c-79.47,0-115.358,63.17-120.335,101.096C7.617,136.956,0,147.11,0,158.933v58.113c0,16.047,14.01,29.057,31.292,29.057H54.76c4.325,0,7.823-3.249,7.823-7.265V137.141c0-4.016-3.498-7.265-7.823-7.265h-9.87c3.523-12.281,10.836-29.112,24.414-43.323c3.158,3.908,7.131,7.414,11.239,7.414c9.282,0,24.908-17.817,58.183-17.817c33.277,0,48.873,17.817,58.156,17.817c4.1,0,8.068-3.493,11.223-7.392c14.461,14.158,23.291,30.934,27.808,43.302h-13.248c-4.324,0-7.824,3.249-7.824,7.265v101.697c0,4.016,3.5,7.265,7.824,7.265h23.468c17.281,0,31.292-13.01,31.292-29.057v-58.113C277.425,149.954,273.034,141.93,266.142,136.6z M173.886,169.418l-21.857,21.803v-56.983c0-7.414-6.024-13.424-13.456-13.424c-7.432,0-13.457,6.01-13.457,13.424v56.983l-21.856-21.803c-5.205-5.194-13.647-5.194-18.853,0c-5.207,5.193-5.207,13.614,0,18.807l42.881,42.779c2.398,3.694,6.545,6.15,11.285,6.15c4.739,0,8.887-2.456,11.284-6.15l42.881-42.779c5.207-5.193,5.207-13.614,0-18.807C187.532,164.224,179.092,164.224,173.886,169.418z" />
+                            </svg>
+                            <svg class="hidden animate-spin absolute left-0 right-0 mx-auto w-6 h-6" id="loader"
+                                viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <path class="fill-neutral-800"
+                                    d="M15 8c0 3.9-3.1 7-7 7s-7-3-7-7h-1c0 4 3.6 8 8 8s8-3.6 8-8h-1z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- INPUT -->
+                <form method="GET" class="flex flex-col px-2 py-4">
+                    <div class="text-center text-xl dark:text-neutral-100 mb-2">
+                        DOWNLOAD ANOTHER VIDEO
+                    </div>
+                    <div class="w-full flex h-10 mb-4 rounded-md ring dark:ring-rose-600 ring-neutral-600">
+                        <input type="text" name="url" placeholder="Tiktok link" required
+                            class="clear-css grow h-full rounded-md px-6 bg-neutral-200">
+                    </div>
+                    <button type="submit"
+                        class="w-full flex flex-col justify-center items-center py-1 rounded-lg dark:bg-rose-400 dark:text-black text-white bg-gray-600 hover:bg-gray-800 dark:hover:bg-rose-500 transition-colors cursor-pointer">
+                        <span class="font-semibold text-lg">GET VIDEO</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="overlay_loader" class="overlay hidden bg-neutral-100 dark:bg-neutral-800">
+        <div class="overlay__inner">
+            <div class="overlay__content"><span
+                    class="spinner dark:border-t-white dark:border-neutral-700 border-neutral-200 border-t-neutral-900"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
