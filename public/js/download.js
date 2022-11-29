@@ -39,38 +39,38 @@ const renderOverlayErrorMessage = (msg, secondary_msg = null) => {
 const readUrl = () => {
     const url = new URL(window.location.href)
     const targetUrlValue = url.searchParams.get('url')
-    if (targetUrlValue === null){
+    if (targetUrlValue === null) {
         renderOverlayErrorMessage("Invalid Video URL.")
         return false
     }
-    return(targetUrlValue)
+    return (targetUrlValue)
 }
 const makeRequest = () => {
     const url = readUrl()
     const enpoint = "https://tikwm.com/api/?url="
     if (url) {
-        const reuestURL = enpoint + url 
+        const reuestURL = enpoint + url
         fetch(reuestURL)
-        .then((response) => {
-            if (response.status >= 200 && response.status <= 299) {
-                return response.json()
-              } else {
-                renderOverlayErrorMessage("Server returned Error code : " + response.status, response.statusText)
-                return null
-              }
-        })
-        .then((data) => processResponse(data))
-        .catch((e) => {
-            renderOverlayErrorMessage("Error Occurred", e.message)
-            throw e
-        })
+            .then((response) => {
+                if (response.status >= 200 && response.status <= 299) {
+                    return response.json()
+                } else {
+                    renderOverlayErrorMessage("Server returned Error code : " + response.status, response.statusText)
+                    return null
+                }
+            })
+            .then((data) => processResponse(data))
+            .catch((e) => {
+                renderOverlayErrorMessage("Error Occurred", e.message)
+                throw e
+            })
     }
 }
 const processResponse = (resJSON) => {
     if (!resJSON) { return false }
     const resCode = resJSON['code']
     const resMsg = resJSON['msg']
-    if (resCode === -1){
+    if (resCode === -1) {
         renderOverlayErrorMessage("Failed to fetch video.", resMsg)
     } else if (resCode === 0) {
         DATA = resJSON['data']
@@ -104,8 +104,8 @@ const renderData = (data) => {
     const musicCoverField = document.getElementById('music_cover')
     const musicTitleField = document.getElementById('music_title')
     const musicAuthorField = document.getElementById('music_author')
-    
-    
+
+
     const videoSource = data['play']
     const videoPoster = data['origin_cover']
     const authorName = data['author']['nickname']
@@ -119,7 +119,7 @@ const renderData = (data) => {
     const musicCover = data["music_info"]['cover']
     const musicTitle = data["music_info"]['title']
     const musicAuthor = data["music_info"]['author']
-    
+
     const videoTitle = data['title']
 
     videoSourceField.src = videoSource
@@ -132,14 +132,13 @@ const renderData = (data) => {
     musicTitleField.innerText = musicTitle
     musicAuthorField.innerText = musicAuthor
 
-    
     const videoElement = `
-    <video controls class="rounded-lg h-full w-full" poster="${videoPoster}" style="background-image:url(../../public/assets/pattern.png);">
+    <video controls class="rounded-lg h-full w-full" poster="${videoPoster}" style="background-image:url(./assets/pattern.png);">
         <source id="video_source" src="${videoSource}">
     </video>
     `
     videoContainer.replaceChildren()
-    videoContainer.insertAdjacentHTML("afterbegin" ,videoElement)
+    videoContainer.insertAdjacentHTML("afterbegin", videoElement)
 
 }
 const getMediaBlobs = (data) => {
@@ -156,7 +155,7 @@ const getBlob = (blobKey, url) => {
     const xhr = new XMLHttpRequest()
     xhr.open("GET", url)
     xhr.responseType = 'blob';
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
         if (this.readyState === this.DONE) {
             console.log('DONE: ', this.status);
             if (this.status == 200) {
@@ -206,7 +205,7 @@ const waitForBlobToDownload = (blobKey, button) => {
     } else {
         console.log("Found blob")
         let filename = DATA['author']['unique_id'] + "___" + DATA['title'] + "___"
-        if (blobKey == "video"){
+        if (blobKey == "video") {
             filename += "NO_WM"
             var extension = ".mp4"
         } else if (blobKey == "video_wm") {
@@ -228,8 +227,8 @@ const toggleButtonLoading = (button) => {
 
     loader.classList.toggle('hidden')
     text.classList.toggle('opacity-0')
-    
-    if(loading){
+
+    if (loading) {
         button.style.pointerEvents = "all"
     } else {
         button.style.pointerEvents = "none"
